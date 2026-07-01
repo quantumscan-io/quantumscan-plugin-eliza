@@ -4,6 +4,13 @@ Pre-transaction safety checks and smart contract security scans for [ElizaOS](ht
 
 If your agent holds or moves on-chain funds, this plugin lets it check **before it signs** — not after it's been drained.
 
+> **Not the same as [`elizaos-plugin-quantumscan`](https://www.npmjs.com/package/elizaos-plugin-quantumscan).**
+> That package scans a GitHub/GitLab/Bitbucket *repository* for post-quantum-cryptography
+> vulnerabilities (static analysis, no payment involved). This package (`@quantumscan/plugin-eliza`)
+> checks a *live transaction or contract address* right before the agent signs it, billed per call
+> via x402. Different job, same company — use the repo scanner for code review, use this one for
+> runtime transaction safety.
+
 ## Install
 
 ```bash
