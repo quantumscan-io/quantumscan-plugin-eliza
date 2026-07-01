@@ -1,0 +1,52 @@
+{
+  "name": "@quantumscan/plugin-eliza",
+  "version": "0.1.0",
+  "description": "ElizaOS plugin: pre-transaction safety checks and continuous contract monitoring via QuantumScan, for autonomous agents that hold or move funds on-chain.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+    }
+  },
+  "files": ["dist"],
+  "keywords": [
+    "elizaos",
+    "elizaos-plugin",
+    "eliza-plugin",
+    "ai-agent",
+    "blockchain-security",
+    "post-quantum-cryptography",
+    "quantumscan"
+  ],
+  "author": "QuantumScan <hello@quantumscan.io>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quantumscan-io/quantumscan-plugin-eliza"
+  },
+  "homepage": "https://quantumscan.io",
+  "bugs": "https://github.com/quantumscan-io/quantumscan-plugin-eliza/issues",
+  "peerDependencies": {
+    "@elizaos/core": "^1.7.0"
+  },
+  "dependencies": {
+    "x402": "^1.2.0",
+    "x402-fetch": "^1.2.0"
+  },
+  "devDependencies": {
+    "@elizaos/core": "^1.7.2",
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
